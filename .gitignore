@@ -6,5 +6,7 @@ note
 *.zip
 db.sqlite3
 /static
+blog
+.gitignore
 .DS_Store
 .idea
