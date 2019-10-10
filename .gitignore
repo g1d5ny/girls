@@ -2,9 +2,9 @@
 *~
 __pycache__
 myvenv
+note
+*.zip
 db.sqlite3
-blog
-mysite
 /static
 .DS_Store
 .idea
