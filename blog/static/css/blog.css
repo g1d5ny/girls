@@ -1,13 +1,3 @@
-/*h1 a, h2 a {*/
-/*    color: #FCA205;*/
-/*    font-family: 'Lobster';*/
-/*}*/
-
-/*body {*/
-/*    padding-left: 15px;*/
-/*}*/
-
-/*!* 브라우저 캐시 삭제 F12 키로 개발자 도구 활성화 후, 새로고침 아이콘 우측 마우스 클릭 *!*/
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
@@ -54,3 +44,14 @@ h1, h2, h3, h4 {
 .post h1 a, .post h1 a:visited {
     color: #000000;
 }
+
+/*h1 a, h2 a {*/
+    /*color: #FCA205;*/
+    /*font-family: 'Lobster';*/
+/*}*/
+
+/*body {*/
+    /*padding-left: 15px;*/
+/*}*/
+
+/* 브라우저 캐시 삭제 F12 키로 개발자 도구 활성화 후, 새로고침 아이콘 우측 마우스 클릭*/

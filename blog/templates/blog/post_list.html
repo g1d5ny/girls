@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %} {# 탬프릿 태그로 정적파일을 메모리로 불러들인다는 명령 #}
+{% load static %} {# 탬플릿 태그로 정적파일을 메모리로 불러들인다는 명령 #}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap&amp;subset=korean" rel="stylesheet">
     <title>블로그 글 목록</title>
 </head>
 <body>
@@ -18,6 +19,7 @@
     {{ posts }} <br/><br/> {# 이게 장고 템플릿 변수(변수의 내용을 출력할 때 사용) #}
     {# 아래 루트 처리 부분이 장고 템플릿 태그 #}
     {% for post in posts %} {# 여기부터 for루트 시작 #}
+        posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
         {{ post }} <br/>
     {% endfor %}            {# 여기까지 for루트 끝 #}
     {% endcomment %}
