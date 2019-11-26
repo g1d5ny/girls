@@ -11,19 +11,38 @@
     <title>블로그 글 목록</title>
 </head>
 <body>
-    <div class="page-header">
+<div class="page-header">
+    {% if user.is_authenticated %} <!-- 로그인 완료된 사용자에게만 허락 -->
         <a href="{% url 'post_new' %}" class="top-menu">
-            <span class="glyphicon glyphicon-plus"></span></a>
-        <h1><a href="/">장고 걸스 블로그</a>
-        </h1>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">  <!--부트스트랩 그리드 시스템-->
-            {% block content %}
-            {% endblock %}
-            </div>
+            <span class="glyphicon glyphicon-plus"></span>
+        </a>
+        <a href="{% url 'post_draft_list' %}" class="top-menu">
+            <span class="glyphicon glyphicon-edit"></span>
+        </a>
+        <a href="{% url 'logout' %}" class="top-menu">
+            <span class="glyphicon glyphicon-log-out"></span>
+        </a>
+        <span class="top-menu">{{ user.username }}</span>
+    {% else %}
+        <a href="{% url 'login' %}" class="top-menu">
+            <span class="glyphicon glyphicon-log-in"></span>
+        </a>
+        <a href="{% url 'admin:index' %}" class="top-menu">
+            <span class="glyphicon glyphicon-user"></span>
+        </a>
+    {% endif %}
+    <a href="{% url 'post_list' %}" class="top-menu">
+        <span class="glyphicon glyphicon-th-list"></span>
+    </a>
+    <h1><a href="/blog/">장고 걸스 블로그</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">  <!--부트스트랩 그리드 시스템-->
+        {% block content %}
+        {% endblock %}
         </div>
     </div>
+</div>
 </body>
 </html>
